@@ -389,7 +389,7 @@ Runs before every `git push`:
 
 | Workflow | Trigger | Checks |
 |----------|---------|--------|
-| `typecheck.yml` | PR, push to main | `tsc --noEmit` for src and API tsconfigs |
+| `typecheck.yml` | PR, push to main | `tsc --noEmit` (TypeScript 7) for src, API, contract-test, e2e and Convex tsconfigs |
 | `lint-code.yml` | PR, push to main | Biome lint + sebuf API-contract enforcement; markdownlint-cli2 in a `markdown` job that runs on every push to main and, on PRs, only when markdown, its config, or package.json changes |
 | `test.yml` | PR, push to main | Unit/integration suite, docs-stats guardrail, plus conditional digest-image and resilience-validation smoke gates |
 | `e2e-visual.yml` | Path-filtered PR, push to main (chrome only), nightly cron, manual | Deterministic map goldens (`test:e2e:visual`) plus named harness chrome captures; evidence only — not a deploy-gate required check |
